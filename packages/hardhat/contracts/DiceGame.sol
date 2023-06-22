@@ -40,6 +40,8 @@ contract DiceGame {
         uint256 amount = prize;
         (bool sent, ) = msg.sender.call{value: amount}("");
         require(sent, "Failed to send Ether");
+          console.log('\t',"   amount sent from dice roll:",amount);
+
 
         resetPrize();
         emit Winner(msg.sender, amount);
